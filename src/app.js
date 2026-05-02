@@ -132,7 +132,7 @@ const NOW_M = new Date().getMonth();
  */
 const FORM_CONFIG = {
   // ⬇️  PASTE YOUR GOOGLE FORM ACTION URL HERE (ends with /formResponse)
-  ACTION_URL: "https://docs.google.com/forms/d/e/1FAIpQLSdXi5WVa1_NqFrYnJA3yB4amfSvBH5ZqDSDyi-Xngx8eOYpwQ/viewform?usp=pp_url",
+  ACTION_URL: "https://docs.google.com/forms/d/e/1FAIpQLSdXi5WVa1_NqFrYnJA3yB4amfSvBH5ZqDSDyi-Xngx8eOYpwQ/formResponse",
   FIELDS: {
     name:  "entry.632937879",
     why:   "entry.1095976003",
