@@ -132,11 +132,11 @@ const NOW_M = new Date().getMonth();
  */
 const FORM_CONFIG = {
   // ⬇️  PASTE YOUR GOOGLE FORM ACTION URL HERE (ends with /formResponse)
-  ACTION_URL: "",
+  ACTION_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSaQGMR87-dm1kyDQN59u7J0YGc1VErhKzS7tHqFr3uPw2DzwUYtwGWQJ0shlqoIjloISzgZCQMb5e0/pub?gid=756469245&single=true&output=csv",
   FIELDS: {
-    name:  "", // ⬇️  e.g. "entry.123456789"
-    why:   "", // ⬇️  e.g. "entry.987654321"
-    email: "", // ⬇️  e.g. "entry.111222333"
+    name:  "entry.123456789",
+    why:   "entry.987654321",
+    email: "entry.111222333",
   },
 };
 
