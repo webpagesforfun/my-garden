@@ -26,7 +26,7 @@
 
 const CONFIG = {
   // ⬇️  PASTE YOUR PUBLISHED GOOGLE SHEET CSV URL HERE
-  SHEET_CSV_URL: "",
+  SHEET_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSaQGMR87-dm1kyDQN59u7J0YGc1VErhKzS7tHqFr3uPw2DzwUYtwGWQJ0shlqoIjloISzgZCQMb5e0/pub?gid=756469245&single=true&output=csv",
 
   // Fallback: use local JSON data if sheet URL is not set
   USE_LOCAL_FALLBACK: true,
