@@ -1,0 +1,17 @@
+# netlify.toml — Netlify deployment configuration
+
+[build]
+  publish = "."       # root folder is the site (no build step needed)
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Allow Open-Meteo and Google Sheets API calls from the browser
+[[headers]]
+  for = "/src/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

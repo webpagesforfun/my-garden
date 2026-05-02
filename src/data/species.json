@@ -1,0 +1,214 @@
+[
+  {
+    "id": "freesia",
+    "name": { "pt": "Frésia", "en": "Freesia" },
+    "latin": "Freesia spp.",
+    "icon": "🌸",
+    "pills": {
+      "pt": ["Bolbo", "Sol pleno", "Solo bem drenado", "Perfumada", "Flor de corte"],
+      "en": ["Bulb", "Full sun", "Well-drained", "Fragrant", "Cut flower"]
+    },
+    "facts": {
+      "pt": "Plante os bolbos no outono (Set–Nov), 5 cm de profundidade. Floresce em Mar–Abr. Arranque e guarde os bolbos após a folhagem secar. Excelente como flor de corte — colha de manhã.",
+      "en": "Plant corms in autumn (Sep–Nov), 5 cm deep. Blooms Mar–Apr. Lift and store corms after foliage dies back. Excellent cut flower — harvest in the morning."
+    },
+    "lifecycle": {
+      "plant": [9, 10, 11],
+      "grow":  [0, 1, 2],
+      "bloom": [3, 4],
+      "tend":  [5],
+      "lift":  [6],
+      "rest":  [7, 8]
+    },
+    "tasks": {
+      "0":  { "grow":  { "pt": ["Os rebentos podem estar a emergir — não perturbe", "As chuvas de janeiro são normalmente suficientes; evite encharcamento", "Verifique a drenagem após chuvas intensas"], "en": ["Shoots may be emerging — do not disturb", "January rains usually sufficient; avoid waterlogging", "Check drainage around beds after heavy rainfall"] } },
+      "1":  { "grow":  { "pt": ["Observe os rebentos a emergir do solo", "Regue levemente apenas em períodos secos", "Retire ervas daninhas com cuidado em redor dos rebentos"], "en": ["Watch for shoots pushing through soil", "Water lightly only if dry spells occur", "Remove weeds carefully around emerging growth"] } },
+      "2":  { "grow":  { "pt": ["Botões em formação — aumente a rega gradualmente", "Aplique fertilizante líquido equilibrado (10-10-10)", "Entutorar as hastes mais altas contra os ventos costeiros"], "en": ["Buds forming — increase watering gradually", "Apply balanced liquid fertiliser (10-10-10)", "Stake taller stems against coastal winds"] } },
+      "3":  { "bloom": { "pt": ["Plena floração — remova flores murchas diariamente", "Corte as hastes de manhã cedo para melhor durabilidade", "Aproveite a fragrância — o mês mais gratificante!"], "en": ["Peak bloom — deadhead spent flowers daily", "Cut stems in the early morning for best vase life", "Enjoy the fragrance — the most rewarding month!"] } },
+      "4":  { "bloom": { "pt": ["Continue a remover flores murchas", "Aplique fertilizante rico em potássio para fortalecer os bolbos", "Reduza a rega à medida que as flores terminam"], "en": ["Continue deadheading as flowers fade", "Apply potassium-rich feed to strengthen corms", "Reduce watering as blooms finish"] } },
+      "5":  { "tend":  { "pt": ["Deixe a folhagem amarelecer e secar — não corte", "Pare de regar; deixe o solo secar completamente", "Marque as posições se planeia arrancar os bolbos"], "en": ["Allow foliage to yellow and die back — do not cut", "Stop watering; let soil dry fully", "Mark positions if planning to lift corms"] } },
+      "6":  { "lift":  { "pt": ["Arranque os bolbos depois de a folhagem estar completamente seca", "Seque num local sombreado e ventilado durante 1–2 semanas", "Separe os bolbinhos; descarte os moles ou com bolor"], "en": ["Lift corms once foliage is completely dried", "Dry in a shaded, ventilated spot for 1–2 weeks", "Separate offsets; discard any soft or mouldy corms"] } },
+      "7":  { "rest":  { "pt": ["Guarde os bolbos em sacos de rede — fresco, escuro, seco (15–18 °C)", "Verifique mensalmente; remova imediatamente os que apodreçam"], "en": ["Store corms in net bags — cool, dark, dry (15–18 °C)", "Check monthly; remove any rotting corms promptly"] } },
+      "8":  { "rest":  { "pt": ["Continue a armazenar; prepare canteiros com composto e areia grossa", "Escolha um local ensolarado e abrigado para plantar no outono"], "en": ["Continue storing; prepare beds with compost and grit", "Choose a sunny sheltered spot for autumn planting"] } },
+      "9":  { "plant": { "pt": ["Plante os bolbos a 5 cm de profundidade, ponta virada para cima", "Espaçe 8–10 cm num solo bem drenado", "Regue uma vez após plantar, depois com moderação"], "en": ["Plant corms 5 cm deep, pointed end up", "Space 8–10 cm apart in well-drained soil", "Water once after planting, then sparingly"] } },
+      "10": { "plant": { "pt": ["Continue a plantar — outubro é ideal no litoral", "Cubra levemente com mulch para proteger do frio", "As chuvas de outono são normalmente suficientes"], "en": ["Continue planting — October is ideal in the litoral", "Mulch lightly to protect from cold spells", "Autumn rains usually sufficient"] } },
+      "11": { "plant": { "pt": ["Plantação tardia ainda possível no clima ameno do litoral", "Etiquete bem as áreas de plantação", "Planeie combinações de cores para a próxima época"], "en": ["Late planting still possible in the mild litoral climate", "Label planting areas clearly", "Plan colour combinations for next season"] } }
+    }
+  },
+  {
+    "id": "alstroemeria",
+    "name": { "pt": "Alstroeméria", "en": "Alstroemeria" },
+    "latin": "Alstroemeria spp.",
+    "icon": "🌺",
+    "pills": {
+      "pt": ["Perene", "Sol pleno / meia-sombra", "Flor de corte duradoura", "Resistente à seca"],
+      "en": ["Perennial", "Full sun / part shade", "Long-lasting cut flower", "Drought tolerant"]
+    },
+    "facts": {
+      "pt": "Perene resistente. Puxe (não corte) as hastes na base para estimular mais flores. Divida as touceiras congestionadas no final do verão. Pode ter uma segunda floração no verão.",
+      "en": "Hardy perennial. Pull (don't cut) stems at the base to encourage more flowers. Divide congested clumps in late summer. Second flush possible in summer."
+    },
+    "lifecycle": {
+      "rest":  [0],
+      "grow":  [1, 2, 3],
+      "bloom": [4, 5, 6, 7],
+      "plant": [8, 9],
+      "tend":  [10, 11]
+    },
+    "tasks": {
+      "0":  { "rest":  { "pt": ["Cubra as raízes com mulch para proteger de geada", "Regue apenas em períodos secos excecionais", "Verifique as coroas após chuvas intensas de inverno"], "en": ["Mulch roots to protect from any frost", "Water only if exceptional dry spells occur", "Check crowns for rot after heavy winter rain"] } },
+      "1":  { "grow":  { "pt": ["Remova hastes velhas mortas à medida que brotam novos rebentos", "Aplique fertilizante granulado de libertação lenta", "Limpe ervas daninhas com cuidado em redor da base"], "en": ["Remove old dead stems as new growth appears", "Apply balanced slow-release granular fertiliser", "Clear weeds carefully around the base"] } },
+      "2":  { "grow":  { "pt": ["Crescimento a acelerar — comece a regar regularmente", "Divida touceiras muito cheias se necessário", "Cubra à volta da base com composto"], "en": ["Growth accelerating — begin regular watering", "Divide overcrowded clumps if root-bound", "Top-dress with compost around the base"] } },
+      "3":  { "grow":  { "pt": ["Fertilize com adubo rico em potássio a cada 2 semanas", "Entutorar hastes mais altas com canas se necessário", "Regue regularmente à medida que as temperaturas sobem"], "en": ["Feed with high-potassium fertiliser every 2 weeks", "Support taller stems with canes if needed", "Water consistently as temperatures rise"] } },
+      "4":  { "bloom": { "pt": ["Início da época principal de floração", "Puxe as hastes pela base — estimula mais flores", "Fertilize a cada 2 semanas; não deixe as raízes secar"], "en": ["Main flowering season begins", "Pull stems at the base — triggers more flowers", "Feed every 2 weeks; never let roots dry out"] } },
+      "5":  { "bloom": { "pt": ["Época de pico — flores abundantes e duradouras", "Vigie pulgões; trate com sabão inseticida", "Continue a puxar as hastes gastas pela base"], "en": ["Peak season — prolific and long-lasting blooms", "Watch for aphids; treat with insecticidal soap", "Continue pulling spent stems to the base"] } },
+      "6":  { "bloom": { "pt": ["Segunda floração possível no verão — mantenha a rega", "Regue profundamente uma vez por semana no calor de junho", "Drenagem excelente previne o apodrecimento da coroa"], "en": ["Second flush in summer — maintain watering", "Deep water once a week in the June heat", "Ensure excellent drainage to prevent crown rot"] } },
+      "7":  { "bloom": { "pt": ["Flores de fim de verão — reduza a fertilização", "Remova hastes gastas para estimular as últimas flores", "Mulch ligeiro em volta da base retém humidade"], "en": ["Late-summer blooms — reduce feeding", "Remove spent stems to encourage final flowers", "Light mulch around the base retains moisture"] } },
+      "8":  { "plant": { "pt": ["Melhor mês para dividir e replantar touceiras", "Plante divisões em canteiros preparados", "Regue bem; estabelecem-se rapidamente no solo ainda quente"], "en": ["Best month to divide and replant clumps", "Plant bare-root divisions in prepared beds", "Water in well; they establish quickly in warm soil"] } },
+      "9":  { "plant": { "pt": ["Continue a plantar novas divisões", "Aplique fertilizante de outono equilibrado", "Regue regularmente enquanto as plantas se estabelecem"], "en": ["Continue planting new bare-root divisions", "Apply balanced autumn fertiliser", "Water regularly as plants establish"] } },
+      "10": { "tend":  { "pt": ["Corte hastes cansadas a 10 cm da base", "Cubra as raízes antes das noites mais frias", "Reduza a rega à medida que a planta repousa"], "en": ["Cut tired stems back to 10 cm", "Mulch roots before cooler nights", "Reduce watering as the plant rests"] } },
+      "11": { "tend":  { "pt": ["Rega mínima — as chuvas de outono bastam", "Aplique palha de cobertura se houver previsão de geada", "Planeie disposição dos canteiros para o próximo ano"], "en": ["Minimal watering — autumn rains take over", "Apply straw mulch if frost is forecast", "Plan bed layout and colour combinations for next year"] } }
+    }
+  },
+  {
+    "id": "hydrangea",
+    "name": { "pt": "Hortênsia", "en": "Hydrangea" },
+    "latin": "Hydrangea macrophylla",
+    "icon": "💐",
+    "pills": {
+      "pt": ["Arbusto", "Meia-sombra / sol da manhã", "Acidófila para azul", "Mophead", "Flor seca"],
+      "en": ["Shrub", "Part shade / morning sun", "Ericaceous for blue", "Mophead", "Dried flower"]
+    },
+    "facts": {
+      "pt": "A cor da flor depende do pH do solo: ácido = azul, alcalino = rosa. Aplique fertilizante acidificante para tons azuis. Nunca pode as variedades mophead no outono — os botões formam-se na madeira velha.",
+      "en": "Flower colour depends on soil pH: acid = blue, alkaline = pink. Apply ericaceous fertiliser for blue tones. Never prune mophead varieties in autumn — buds form on old wood."
+    },
+    "lifecycle": {
+      "rest":  [0, 1],
+      "grow":  [2, 3, 4],
+      "bloom": [5, 6, 7, 8],
+      "plant": [9, 10],
+      "tend":  [10, 11]
+    },
+    "tasks": {
+      "0":  { "rest":  { "pt": ["Mantenha as raízes bem cobertas com mulch — não perturbe", "Regue apenas em períodos secos invulgares", "Não pode — os botões florais estão no interior das hastes"], "en": ["Keep roots well mulched — do not disturb", "Water only in unusual dry spells", "Do not prune — flower buds sit inside the stems"] } },
+      "1":  { "rest":  { "pt": ["Verifique danos de geada nos botões emergentes", "Regue com moderação", "Aplique fertilizante de libertação lenta no fim do mês"], "en": ["Check for frost damage on emerging buds", "Water sparingly", "Apply slow-release fertiliser around the base as month ends"] } },
+      "2":  { "grow":  { "pt": ["Novo crescimento a emergir — comece a regar regularmente", "Corte apenas hastes mortas ou danificadas (nunca as flores mophead)", "Aplique fertilizante acidificante para tons azuis vivos"], "en": ["New growth emerging — begin regular watering", "Prune only dead or damaged stems (never the mophead flowers)", "Apply ericaceous fertiliser for vivid blue tones"] } },
+      "3":  { "grow":  { "pt": ["Crescimento vigoroso — regue generosamente", "Retire as flores murchas do ano anterior", "Fertilize a cada 2–3 semanas com adubo líquido equilibrado"], "en": ["Growth vigorous — water generously", "Remove last year's faded flower heads", "Feed every 2–3 weeks with balanced liquid fertiliser"] } },
+      "4":  { "grow":  { "pt": ["Botões a inchar — aumente a rega", "Adicione mulch de casca de pinheiro para manter as raízes frescas", "Proteja dos ventos costeiros tardios"], "en": ["Buds swelling — increase watering", "Add pine bark mulch to keep roots cool and moist", "Protect from late strong coastal winds"] } },
+      "5":  { "bloom": { "pt": ["Início da floração — regue profundamente e regularmente", "Aplique fertilizante rico em potássio para intensificar a cor", "Início do período ornamental de pico"], "en": ["Flowering begins — water deeply and regularly", "Apply high-potassium feed to intensify colour", "Peak ornamental period begins"] } },
+      "6":  { "bloom": { "pt": ["Plena época de floração — display espetacular", "Retire as flores completamente gastas", "Vigie oídio; trate com solução de bicarbonato"], "en": ["Full flowering season — spectacular display", "Remove fully spent heads as they fade", "Watch for powdery mildew; treat with bicarbonate spray"] } },
+      "7":  { "bloom": { "pt": ["Floração contínua na humidade costeira do litoral", "Mantenha o calendário de rega rigorosamente", "Proteja do sol intenso da tarde em dias de calor extremo"], "en": ["Continued flowering in the litoral coastal humidity", "Maintain strict watering schedule", "Protect from intense afternoon sun during heatwaves"] } },
+      "8":  { "bloom": { "pt": ["A cor das flores a esbater lindamente — deixe as cabeças secas na planta", "Comece a reduzir a fertilização", "Prepare novos buracos de plantação para o outono"], "en": ["Flower colour fading beautifully — leave dried heads on plant", "Begin reducing fertiliser", "Prepare new planting holes for autumn planting"] } },
+      "9":  { "plant": { "pt": ["Melhor mês para plantar novas hortênsias", "Regue bem — estabelecem-se rapidamente com as chuvas de outono", "Aplique fertilizante radicular de outono"], "en": ["Best month to plant new hydrangeas", "Water in well; they establish quickly in autumn rains", "Apply autumn root fertiliser"] } },
+      "10": { "tend":  { "pt": ["Limpe os canteiros; retire folhas doentes ou amareladas", "Cubra as raízes com 10 cm de composto", "Reduza a rega com o regresso das chuvas de outono"], "en": ["Tidy beds; remove diseased or yellowed leaves", "Mulch roots with 10 cm of compost", "Reduce watering as autumn rains return"] } },
+      "11": { "tend":  { "pt": ["Deixe as cabeças secas para estrutura invernal", "Verifique o pH do solo se planear ajustar a cor no próximo ano", "Essencialmente dormente — rega mínima"], "en": ["Leave attractive dried flower heads for winter structure", "Check soil pH if planning colour adjustments next year", "Essentially dormant — minimal watering"] } }
+    }
+  },
+  {
+    "id": "goldmarie",
+    "name": { "pt": "Bidens", "en": "Goldmarie" },
+    "latin": "Bidens ferulifolia",
+    "icon": "🌻",
+    "pills": {
+      "pt": ["Anual / perene tenra", "Sol pleno", "Vasos e cestos", "Floração contínua", "Propague por estacas"],
+      "en": ["Annual / tender perennial", "Full sun", "Pots & baskets", "Non-stop bloomer", "Overwinter cuttings"]
+    },
+    "facts": {
+      "pt": "Coloque no exterior após o risco de geada (abril no litoral). Retire flores murchas regularmente para floração contínua dourada. Faça estacas no final do verão para hibernar em casa.",
+      "en": "Plant out after frost risk passes (April in litoral). Deadhead regularly for non-stop golden flowers. Take cuttings in late summer to overwinter indoors."
+    },
+    "lifecycle": {
+      "rest":  [0, 11],
+      "grow":  [1, 2],
+      "plant": [3, 4],
+      "bloom": [5, 6, 7, 8, 9],
+      "lift":  [10]
+    },
+    "tasks": {
+      "0":  { "rest":  { "pt": ["Hiberne estacas num local sem geada, em casa", "Mantenha quase seco — sem fertilizante", "Janela com boa luz mantém as plantas compactas"], "en": ["Overwinter cuttings in frost-free spot indoors", "Keep barely moist — no fertiliser", "Bright windowsill keeps plants compact"] } },
+      "1":  { "grow":  { "pt": ["Comece a regar as plantas hibernadas um pouco mais", "Faça estacas de 10 cm para propagação", "Semeie em casa a 16–18 °C sob boa luz"], "en": ["Begin watering overwintered plants slightly more", "Take 10 cm tip cuttings in moist compost if propagating", "Sow seeds indoors at 16–18 °C under bright light"] } },
+      "2":  { "grow":  { "pt": ["Transplante as plântulas para vasos maiores", "Comece fertilizante líquido a meia dose", "Pince as pontas para estimular ramificação"], "en": ["Transplant seedlings to larger pots", "Begin half-strength liquid fertiliser", "Pinch growing tips to encourage bushy branching"] } },
+      "3":  { "plant": { "pt": ["Aclimate as plantas jovens num local abrigado", "Coloque no exterior — risco de geada muito baixo no litoral", "Sol pleno essencial: mínimo de 6 horas de luz direta"], "en": ["Harden off young plants in a sheltered outdoor spot", "Plant out — frost risk very low on the litoral coast", "Full sun essential: minimum 6 hours of direct light"] } },
+      "4":  { "plant": { "pt": ["Continue a plantar no exterior durante abril", "Espaçe generosamente — crescem com entusiasmo", "Regue bem na plantação; estabelecem-se rapidamente"], "en": ["Continue planting out through April", "Space generously — they spread enthusiastically", "Water well at planting; they establish fast"] } },
+      "5":  { "bloom": { "pt": ["Floração a iniciar — retire flores murchas regularmente", "Regue consistentemente; murcham visivelmente sem humidade", "Fertilize semanalmente com adubo líquido rico em potássio"], "en": ["Flowering begins — deadhead regularly for continuous blooms", "Water consistently; they wilt visibly without moisture", "Feed weekly with potassium-rich liquid fertiliser"] } },
+      "6":  { "bloom": { "pt": ["Plena época de floração — exuberante display dourado", "Regue diariamente no calor de junho", "Corte ligeiramente se estiverem muito compridas para estimular novos brotos"], "en": ["Full flowering season — prolific golden display", "Water daily in the June heat", "Trim lightly if leggy to encourage fresh new growth"] } },
+      "7":  { "bloom": { "pt": ["Continue a regar diariamente no pico do verão", "Corte as hastes a um terço se ficarem compridas", "Verifique a parte inferior das folhas para mosca-branca; trate com sabão"], "en": ["Continue daily watering in peak summer heat", "Trim stems by one-third if straggly", "Check under leaves for whitefly; treat with soap spray"] } },
+      "8":  { "bloom": { "pt": ["Floração continua fortemente no final do verão", "Faça estacas de 10 cm agora para hibernar em casa", "Reduza ligeiramente a rega à medida que as temperaturas baixam"], "en": ["Flowering continues strongly into late summer", "Take 10 cm cuttings now for overwintering indoors", "Reduce watering slightly as temperatures ease"] } },
+      "9":  { "bloom": { "pt": ["Floração continua até à primeira noite fria", "Leve as plantas em vasos para dentro antes das noites frias", "Permita a auto-sementeira nos canteiros se desejar"], "en": ["Flowering continues until first cold night", "Bring any potted plants indoors before cold nights", "Allow self-seeding in beds if desired"] } },
+      "10": { "lift":  { "pt": ["Remova as plantas do exterior depois de morrerem com o frio", "Enraíze estacas num local sem geada — cuidados mínimos", "Limpe e guarde os vasos para o inverno"], "en": ["Remove outdoor plants after they die back from cold", "Root cuttings in frost-free spot — minimal care needed", "Clean and store pots for winter"] } },
+      "11": { "rest":  { "pt": ["Período de repouso para estacas hibernadas", "Mantenha quase seco — sem fertilizante", "Planeie combinações de vasos e cores para o próximo ano"], "en": ["Resting period for overwintered cuttings", "Keep barely moist — no feeding", "Plan pot and colour combinations for next year"] } }
+    }
+  },
+  {
+    "id": "tulip",
+    "name": { "pt": "Tulipa", "en": "Tulip" },
+    "latin": "Tulipa spp.",
+    "icon": "🌷",
+    "pills": {
+      "pt": ["Bolbo", "Sol pleno", "Drenagem excelente", "Plante Out–Nov", "Arranque após folhagem secar"],
+      "en": ["Bulb", "Full sun", "Excellent drainage", "Plant Oct–Nov", "Lift after foliage dies"]
+    },
+    "facts": {
+      "pt": "Plante a 15–20 cm de profundidade, ponta para cima, Out–Nov. Nunca retire as folhas após a floração — alimentam o bolbo. Arranque, seque e guarde os bolbos no verão. Replante cada outono.",
+      "en": "Plant 15–20 cm deep, pointed end up, Oct–Nov. Never remove leaves after blooming — they feed the bulb. Lift, dry and store bulbs in summer. Re-plant each autumn."
+    },
+    "lifecycle": {
+      "grow":  [0, 1, 2],
+      "bloom": [3, 4],
+      "tend":  [5],
+      "lift":  [6],
+      "rest":  [7, 8],
+      "plant": [9, 10, 11]
+    },
+    "tasks": {
+      "0":  { "grow":  { "pt": ["Bolbos no solo — os rebentos podem aparecer; nunca os cubra", "As chuvas de janeiro são normalmente suficientes; evite encharcamento", "Sem fertilizante por enquanto"], "en": ["Bulbs in ground — shoots may appear; never cover them", "January rains usually sufficient; avoid waterlogging", "No fertiliser yet"] } },
+      "1":  { "grow":  { "pt": ["Rebentos a emergir — sem ação necessária", "Regue apenas em períodos secos excecionais", "Vigie danos de lesmas e caracóis nos novos rebentos"], "en": ["Shoots emerging — no action needed", "Water only in exceptional dry spells", "Watch for slug and snail damage on new growth"] } },
+      "2":  { "grow":  { "pt": ["Hastes a crescer — aplique fertilizante granulado equilibrado", "Regue quando o solo secar entre chuvas", "Entutorar variedades muito altas contra ventos de primavera"], "en": ["Stems growing — apply balanced granular fertiliser", "Water as soil dries between rains", "Stake very tall varieties against spring winds"] } },
+      "3":  { "bloom": { "pt": ["Botões a abrir — regue regularmente", "Corte no estado de botão para arranjos interiores espetaculares", "Aproveite o pico do jardim de primavera!"], "en": ["Buds opening — water regularly", "Cut at bud stage for spectacular indoor arrangements", "Enjoy the peak of the spring garden!"] } },
+      "4":  { "bloom": { "pt": ["Retire imediatamente as flores murchas", "Nunca retire as folhas — alimentam o bolbo para o próximo ano", "Aplique fertilizante rico em potássio para fortalecer os bolbos"], "en": ["Deadhead spent flowers immediately", "Never remove leaves — they feed the bulb for next year", "Apply potassium-rich fertiliser to strengthen bulbs"] } },
+      "5":  { "tend":  { "pt": ["Deixe a folhagem amarelecer e secar completamente — não corte", "Pare de regar — os bolbos precisam de repouso quente e seco", "Retire as cabeças de sementes para direcionar energia para o bolbo"], "en": ["Allow foliage to yellow and die back fully — do not cut", "Stop watering — bulbs need a warm dry rest", "Remove seed heads to direct energy into the bulb"] } },
+      "6":  { "lift":  { "pt": ["Arranque os bolbos depois de a folhagem estar completamente seca", "Seque à sombra ventilada durante 1–2 semanas", "Limpe os bolbos; separe os bolbinhos; descarte os moles"], "en": ["Lift bulbs once foliage has completely dried", "Dry in ventilated shade for 1–2 weeks", "Clean bulbs; separate offsets; discard any soft ones"] } },
+      "7":  { "rest":  { "pt": ["Guarde em sacos de rede — fresco, escuro, seco (15 °C)", "Verifique mensalmente para apodrecimento ou doenças"], "en": ["Store bulbs in mesh bags — cool, dark, dry (15 °C)", "Check monthly for rot or disease"] } },
+      "8":  { "rest":  { "pt": ["Continue a armazenar — o solo ainda está demasiado quente para plantar", "Prepare canteiros com excelente drenagem; adicione areia se o solo for argiloso", "Planeie combinações de cores para a plantação de outono"], "en": ["Continue storing — soil still too warm to plant", "Prepare beds with excellent drainage; add grit if clay", "Plan colour combinations and layout for autumn planting"] } },
+      "9":  { "plant": { "pt": ["Solo a arrefecer — plantação possível no final de setembro", "Continue a preparação do canteiro: adicione farinha de osso e composto", "Profundidade ideal de plantação: 15–20 cm"], "en": ["Soil cooling — late September planting possible", "Continue bed preparation: add bone meal and compost", "Ideal planting depth: 15–20 cm"] } },
+      "10": { "plant": { "pt": ["Mês de pico para plantar — coloque os bolbos com a ponta para cima", "Espaçe 10–15 cm num local ensolarado e bem drenado", "Regue uma vez após plantar"], "en": ["Peak planting month — plant bulbs pointed end up", "Space 10–15 cm apart in a sunny, well-drained spot", "Water once after planting"] } },
+      "11": { "plant": { "pt": ["Plantação continua em novembro no clima ameno do litoral", "Cubra levemente com palha para proteger de qualquer geada", "Etiquete os canteiros com a variedade e cor"], "en": ["Planting continues through November in the mild litoral", "Mulch lightly with straw to protect from any frost", "Label beds with variety and colour"] } }
+    }
+  },
+  {
+    "id": "statice",
+    "name": { "pt": "Estátice", "en": "Statice" },
+    "latin": "Limonium sinuatum",
+    "icon": "🪻",
+    "pills": {
+      "pt": ["Anual", "Sol pleno", "Tolerante à seca", "Costeiro / vento salino", "Flor seca"],
+      "en": ["Annual", "Full sun", "Drought tolerant", "Coastal / salt-wind", "Dried flower"]
+    },
+    "facts": {
+      "pt": "Extremamente tolerante à seca quando estabelecida. Prospera em solos arenosos e bem drenados costeiros. Colha as hastes mal a cor apareça para arranjos secos — pendure em molhos de cabeça para baixo.",
+      "en": "Extremely drought tolerant once established. Thrives in sandy, well-drained coastal soils. Harvest stems just as colour shows for dried arrangements — hang upside down in bunches."
+    },
+    "lifecycle": {
+      "rest":  [0],
+      "grow":  [1, 2],
+      "plant": [3, 4],
+      "bloom": [5, 6, 7, 8, 9],
+      "tend":  [10, 11]
+    },
+    "tasks": {
+      "0":  { "rest":  { "pt": ["Plantas estabelecidas em dormência — sem ação necessária", "Verifique apodrecimento da coroa apenas se o tempo estiver excecionalmente húmido"], "en": ["Established plants dormant — no action needed", "Check for crown rot only if weather is exceptionally wet"] } },
+      "1":  { "grow":  { "pt": ["Semeie em casa — pressione levemente na superfície (precisa de luz para germinar)", "Novas folhas basais podem aparecer em plantas hibernadas", "Comece a regar levemente à medida que os dias aumentam"], "en": ["Sow seeds indoors — press lightly on surface (light needed to germinate)", "New basal leaves may appear on overwintered plants", "Begin light watering as days lengthen"] } },
+      "2":  { "grow":  { "pt": ["Pique as plântulas com cuidado — a raiz pivotante é sensível", "Regue as plantas estabelecidas regularmente à medida que o crescimento recomeça", "Aplique fertilizante granulado de libertação lenta equilibrado"], "en": ["Prick out seedlings carefully — taproot is sensitive", "Water established plants regularly as growth picks up", "Apply slow-release balanced granular fertiliser"] } },
+      "3":  { "plant": { "pt": ["Transplante as plântulas para vasos maiores com cuidado", "Aclimate num local abrigado antes de plantar no exterior", "Comece a plantar em posição ensolarada e bem drenada"], "en": ["Transplant seedlings to larger pots with care", "Harden off in a sheltered spot before planting out", "Begin planting out in well-drained full-sun position"] } },
+      "4":  { "plant": { "pt": ["Plante totalmente — tolera vento costeiro e spray salino", "Espaçe 30–40 cm; as hastes de floração espalham-se bastante", "Regue bem na plantação; uma vez estabelecida, muito resistente à seca"], "en": ["Plant out fully — tolerates coastal wind and salt spray", "Space 30–40 cm apart; stems spread wide when flowering", "Water in well; once established, extremely drought tolerant"] } },
+      "5":  { "bloom": { "pt": ["Primeiras hastes florais — deixe ganhar cor antes de colher", "Colha as hastes mal a cor apareça para melhores resultados secos", "Regue apenas se não houver chuva há 2+ semanas"], "en": ["First flower stems appear — allow to fully colour before harvesting", "Harvest stems just as colour shows for best dried results", "Water only if no rain for 2+ weeks"] } },
+      "6":  { "bloom": { "pt": ["Floração de pico — manutenção muito reduzida", "Colha regularmente e pendure em molhos para secar", "Essencialmente autossuficiente no verão do litoral"], "en": ["Peak flowering — very low maintenance", "Harvest regularly and hang in bunches upside down to dry", "Essentially self-sufficient in the litoral summer"] } },
+      "7":  { "bloom": { "pt": ["Floração abundante continuada no calor de verão", "Sem rega a menos que haja seca excecional — muito resistente", "Corte para secar ao longo do mês"], "en": ["Continued heavy flowering in the summer heat", "No watering unless an exceptional dry spell — very drought tolerant", "Cut for drying throughout the month"] } },
+      "8":  { "bloom": { "pt": ["Floração de final de verão continua", "Colha as últimas hastes para arranjos secos", "Reduza ligeiramente a rega à medida que as temperaturas baixam"], "en": ["Late summer flowering continues", "Harvest last stems for drying arrangements", "Reduce watering slightly as temperatures ease"] } },
+      "9":  { "bloom": { "pt": ["Últimas flores da época", "Deixe as últimas hastes secar na planta para auto-sementeira natural", "Limpe as folhas inferiores que começam a amarelecer"], "en": ["Final flowers of the season", "Allow last stems to dry on plant for natural self-seeding", "Tidy up lower leaves beginning to yellow"] } },
+      "10": { "tend":  { "pt": ["Corte as hastes velhas até à base", "Aplique um mulch ligeiro em volta da base", "Muito resistente — cuidados mínimos necessários"], "en": ["Cut back old flower stems to the base", "Apply a light mulch around the base", "Very hardy — minimal care needed"] } },
+      "11": { "tend":  { "pt": ["Quase nenhuma manutenção necessária", "Regue apenas se ocorrer um período seco excecional", "Planeie o calendário de sementeira para a próxima primavera"], "en": ["Almost no maintenance needed", "Water only if an exceptional dry spell occurs", "Plan sowing schedule for next spring"] } }
+    }
+  }
+]

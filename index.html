@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia do Jardim · Portugal Centro-Oeste</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-controls">
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="btnPT" onclick="setLang('pt')">
+        <span class="lang-flag">🇵🇹</span> PT
+      </button>
+      <button class="lang-btn" id="btnEN" onclick="setLang('en')">
+        <span class="lang-flag">🇬🇧</span> EN
+      </button>
+    </div>
+    <a class="moon-widget" href="https://tabuademares.com/pt/aveiro/aveiro#_fase_lunar"
+       target="_blank" rel="noopener" id="moonWidget" title="Fase lunar">
+      <svg class="moon-svg" id="moonSvg" width="36" height="36" viewBox="0 0 36 36"></svg>
+      <div class="moon-info">
+        <div class="moon-phase-name" id="moonName">…</div>
+        <div class="moon-pct" id="moonPct">…</div>
+        <div class="moon-source">tabuademares.com</div>
+      </div>
+    </a>
+  </div>
+  <p class="masthead-eyebrow" id="hd-eyebrow"></p>
+  <h1 class="masthead-title" id="hd-title"></h1>
+  <p class="masthead-sub" id="hd-sub"></p>
+</header>
+
+<!-- Weather bar -->
+<div class="weather-bar" id="weatherBar">
+  <div class="weather-inner">
+    <div class="weather-item" id="wx-temp">
+      <span class="wx-icon">🌡</span>
+      <span class="wx-val" id="wx-temp-val">—</span>
+      <span class="wx-label" id="wx-temp-label">Temperatura</span>
+    </div>
+    <div class="weather-item" id="wx-rain">
+      <span class="wx-icon">🌧</span>
+      <span class="wx-val" id="wx-rain-val">—</span>
+      <span class="wx-label" id="wx-rain-label">Precipitação</span>
+    </div>
+    <div class="weather-item" id="wx-wind">
+      <span class="wx-icon">💨</span>
+      <span class="wx-val" id="wx-wind-val">—</span>
+      <span class="wx-label" id="wx-wind-label">Vento</span>
+    </div>
+    <div class="weather-item" id="wx-uv">
+      <span class="wx-icon">☀️</span>
+      <span class="wx-val" id="wx-uv-val">—</span>
+      <span class="wx-label" id="wx-uv-label">Índice UV</span>
+    </div>
+    <div class="weather-item wx-source-item">
+      <span class="wx-source">Open-Meteo · Aveiro, PT</span>
+    </div>
+  </div>
+</div>
+
+<nav class="species-nav" id="speciesNav">
+  <div class="snav-loading" id="snavLoading">A carregar espécies…</div>
+</nav>
+
+<main class="page-wrap" id="pageWrap">
+  <div class="loading-state" id="loadingState">
+    <div class="loading-spinner"></div>
+    <p id="loadingMsg">A carregar dados do jardim…</p>
+  </div>
+</main>
+
+<script src="src/utils/moon.js"></script>
+<script src="src/utils/weather.js"></script>
+<script src="src/utils/sheets.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>
