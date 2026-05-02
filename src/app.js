@@ -24,6 +24,28 @@ const UI = {
     errorTitle:    "Erro ao carregar dados",
     errorBody:     "Não foi possível carregar os dados das espécies. Verifique a sua ligação ou a configuração da folha de cálculo.",
     errorLink:     "Ver instruções de configuração",
+    monthView:     "Este Mês",
+    monthViewSub:  "Todas as tarefas para",
+    noTasksMonth:  "Sem tarefas este mês.",
+    progress:      "concluídas",
+    clearDone:     "Limpar concluídas",
+    resetAll:      "Repor todas",
+    requestTab:    "Ver mais espécies",
+    requestTitle:  "Sugira uma nova espécie",
+    requestSub:    "Não encontrou a sua planta favorita? Sugira-a aqui e analisaremos a possibilidade de a incluir no guia.",
+    requestName:   "Nome da espécie",
+    requestNamePh: "Ex: Lavanda, Girassol, Begónia…",
+    requestWhy:    "Porquê esta espécie?",
+    requestWhyPh:  "Diga-nos porque seria uma boa adição ao guia (opcional)",
+    requestEmail:  "O seu email (opcional)",
+    requestEmailPh:"Para lhe respondermos quando for adicionada",
+    requestSubmit: "Enviar sugestão",
+    requestSending:"A enviar…",
+    requestDone:   "Sugestão enviada, obrigado! 🌱",
+    requestDoneSub:"Analisaremos o seu pedido em breve.",
+    requestErr:    "Erro ao enviar. Por favor tente novamente.",
+    requestAnother:"Enviar outra sugestão",
+    requestConfig: "⚙️ Configure o Google Form para receber sugestões. Ver README.md para instruções.",
     phases: {
       plant: "Plantar / semear",
       grow:  "Crescimento",
@@ -48,6 +70,28 @@ const UI = {
     errorTitle:    "Could not load data",
     errorBody:     "Species data could not be loaded. Check your connection or spreadsheet configuration.",
     errorLink:     "View setup instructions",
+    monthView:     "This Month",
+    monthViewSub:  "All tasks for",
+    noTasksMonth:  "No tasks this month.",
+    progress:      "completed",
+    clearDone:     "Clear completed",
+    resetAll:      "Reset all",
+    requestTab:    "See more species",
+    requestTitle:  "Suggest a new species",
+    requestSub:    "Can't find your favourite plant? Suggest it here and we'll consider adding it to the guide.",
+    requestName:   "Species name",
+    requestNamePh: "E.g. Lavender, Sunflower, Begonia…",
+    requestWhy:    "Why this species?",
+    requestWhyPh:  "Tell us why it would be a great addition (optional)",
+    requestEmail:  "Your email (optional)",
+    requestEmailPh:"So we can let you know when it's added",
+    requestSubmit: "Submit suggestion",
+    requestSending:"Sending…",
+    requestDone:   "Suggestion sent, thank you! 🌱",
+    requestDoneSub:"We'll review your request soon.",
+    requestErr:    "Error sending. Please try again.",
+    requestAnother:"Send another suggestion",
+    requestConfig: "⚙️ Configure the Google Form to receive suggestions. See README.md for instructions.",
     phases: {
       plant: "Plant / sow",
       grow:  "Grow",
@@ -71,6 +115,31 @@ const PH = {
 };
 
 const NOW_M = new Date().getMonth();
+
+/* ── GOOGLE FORM CONFIG ───────────────────────────── */
+/**
+ * HOW TO SET UP:
+ * 1. Go to forms.google.com → create a new form
+ * 2. Add three questions (Short answer):
+ *    - "Species name"
+ *    - "Why this species?"
+ *    - "Email"
+ * 3. Click the 3-dot menu → Get pre-filled link
+ * 4. Fill dummy values, click Get Link, copy it
+ * 5. From that URL extract the entry.XXXXXXX ids
+ * 6. Paste your Form action URL and entry ids below
+ * 7. In the form settings → Responses → link to your existing Sheet
+ */
+const FORM_CONFIG = {
+  // ⬇️  PASTE YOUR GOOGLE FORM ACTION URL HERE (ends with /formResponse)
+  ACTION_URL: "",
+  FIELDS: {
+    name:  "", // ⬇️  e.g. "entry.123456789"
+    why:   "", // ⬇️  e.g. "entry.987654321"
+    email: "", // ⬇️  e.g. "entry.111222333"
+  },
+};
+
 
 /* ── HELPERS ──────────────────────────────────────── */
 function u()   { return UI[LANG] || UI.pt; }
@@ -100,10 +169,128 @@ function updateMasthead() {
     : "Garden Life Cycle Planner · Central-West Portugal";
 }
 
-/* ── SPECIES NAV ──────────────────────────────────── */
+/* ── SPECIES REQUEST SECTION ──────────────────────── */
+function buildRequestSection() {
+  const existing = document.getElementById("requestSection");
+  if (existing) existing.remove();
+
+  const ui   = u();
+  const wrap = document.createElement("div");
+  wrap.id    = "requestSection";
+  wrap.className = "request-section";
+
+  const configured = FORM_CONFIG.ACTION_URL && FORM_CONFIG.FIELDS.name;
+
+  wrap.innerHTML = `
+    <div class="req-inner">
+      <div class="req-left">
+        <div class="req-eyebrow">${ui.requestTab}</div>
+        <h2 class="req-title">${ui.requestTitle}</h2>
+        <p class="req-sub">${ui.requestSub}</p>
+      </div>
+      <div class="req-right">
+        ${configured ? `
+        <div class="req-form-wrap" id="reqFormWrap">
+          <div class="req-field">
+            <label class="req-label" for="reqName">${ui.requestName} <span class="req-required">*</span></label>
+            <input class="req-input" id="reqName" type="text" placeholder="${ui.requestNamePh}" maxlength="120">
+          </div>
+          <div class="req-field">
+            <label class="req-label" for="reqWhy">${ui.requestWhy}</label>
+            <textarea class="req-input req-textarea" id="reqWhy" placeholder="${ui.requestWhyPh}" rows="3" maxlength="400"></textarea>
+          </div>
+          <div class="req-field">
+            <label class="req-label" for="reqEmail">${ui.requestEmail}</label>
+            <input class="req-input" id="reqEmail" type="email" placeholder="${ui.requestEmailPh}">
+          </div>
+          <div class="req-error" id="reqError"></div>
+          <button class="req-submit" id="reqSubmit" onclick="submitRequest()">${ui.requestSubmit}</button>
+        </div>
+        <div class="req-success" id="reqSuccess" style="display:none">
+          <div class="req-success-icon">🌱</div>
+          <div class="req-success-title">${ui.requestDone}</div>
+          <div class="req-success-sub">${ui.requestDoneSub}</div>
+          <button class="req-another" onclick="resetRequestForm()">${ui.requestAnother}</button>
+        </div>` : `
+        <div class="req-not-configured">
+          <p>${ui.requestConfig}</p>
+        </div>`}
+      </div>
+    </div>`;
+
+  document.getElementById("pageWrap").appendChild(wrap);
+}
+
+async function submitRequest() {
+  const ui      = u();
+  const nameEl  = document.getElementById("reqName");
+  const whyEl   = document.getElementById("reqWhy");
+  const emailEl = document.getElementById("reqEmail");
+  const submitBtn = document.getElementById("reqSubmit");
+  const errorEl = document.getElementById("reqError");
+
+  const name  = nameEl.value.trim();
+  const why   = whyEl.value.trim();
+  const email = emailEl.value.trim();
+
+  errorEl.textContent = "";
+  if (!name) { nameEl.focus(); errorEl.textContent = "⚠ " + ui.requestName + " *"; return; }
+
+  submitBtn.textContent = ui.requestSending;
+  submitBtn.disabled    = true;
+
+  // Build form-encoded body for Google Forms
+  const body = new URLSearchParams();
+  body.append(FORM_CONFIG.FIELDS.name,  name);
+  if (FORM_CONFIG.FIELDS.why)   body.append(FORM_CONFIG.FIELDS.why,   why);
+  if (FORM_CONFIG.FIELDS.email) body.append(FORM_CONFIG.FIELDS.email, email);
+
+  try {
+    // Google Forms doesn't support CORS so we use no-cors — it always "succeeds"
+    await fetch(FORM_CONFIG.ACTION_URL, {
+      method: "POST", mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: body.toString(),
+    });
+    document.getElementById("reqFormWrap").style.display = "none";
+    document.getElementById("reqSuccess").style.display  = "block";
+  } catch {
+    submitBtn.textContent = ui.requestSubmit;
+    submitBtn.disabled    = false;
+    errorEl.textContent   = "⚠ " + ui.requestErr;
+  }
+}
+
+function resetRequestForm() {
+  document.getElementById("reqFormWrap").style.display = "block";
+  document.getElementById("reqSuccess").style.display  = "none";
+  document.getElementById("reqName").value  = "";
+  document.getElementById("reqWhy").value   = "";
+  document.getElementById("reqEmail").value = "";
+  const btn = document.getElementById("reqSubmit");
+  if (btn) { btn.textContent = u().requestSubmit; btn.disabled = false; }
+}
+
+
 function buildNav() {
   const nav = document.getElementById("speciesNav");
   nav.innerHTML = "";
+
+  // "This Month" tab — first in nav
+  const monthBtn = document.createElement("button");
+  monthBtn.className  = "snav-btn snav-month";
+  monthBtn.id         = "navMonthBtn";
+  monthBtn.innerHTML  = `<span class="snav-icon">📋</span>${u().monthView}`;
+  monthBtn.dataset.id = "__month__";
+  monthBtn.onclick    = () => activateMonthView();
+  nav.appendChild(monthBtn);
+
+  // Divider
+  const div = document.createElement("span");
+  div.className = "snav-divider";
+  nav.appendChild(div);
+
+  // Species tabs
   SPECIES.forEach((sp, i) => {
     const btn = document.createElement("button");
     btn.className  = "snav-btn" + (i === 0 ? " active" : "");
@@ -118,9 +305,151 @@ function activateSpecies(id) {
   document.querySelectorAll(".snav-btn").forEach(b =>
     b.classList.toggle("active", b.dataset.id === id)
   );
+  document.getElementById("monthViewSection").classList.remove("active");
   document.querySelectorAll(".species-section").forEach(s =>
     s.classList.toggle("active", s.id === "sp-" + id)
   );
+}
+
+function activateMonthView() {
+  document.querySelectorAll(".snav-btn").forEach(b => b.classList.remove("active"));
+  document.getElementById("navMonthBtn").classList.add("active");
+  document.querySelectorAll(".species-section").forEach(s => s.classList.remove("active"));
+  renderMonthView();
+  document.getElementById("monthViewSection").classList.add("active");
+}
+
+/* ── MONTHLY VIEW ─────────────────────────────────── */
+const STORAGE_KEY = "garden_done_";
+
+function taskKey(spId, month, phase, taskText) {
+  return `${STORAGE_KEY}${spId}_${month}_${phase}_${taskText.slice(0, 30)}`;
+}
+
+function isDone(key) {
+  try { return localStorage.getItem(key) === "1"; } catch { return false; }
+}
+
+function setDone(key, done) {
+  try {
+    if (done) localStorage.setItem(key, "1");
+    else localStorage.removeItem(key);
+  } catch {}
+}
+
+function renderMonthView() {
+  const ui       = u();
+  const section  = document.getElementById("monthViewSection");
+  const fullMonths = {
+    pt: ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"],
+    en: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+  };
+  const monthName = (fullMonths[LANG] || fullMonths.pt)[NOW_M];
+
+  // Collect all tasks for this month across all species
+  let totalTasks = 0, doneTasks = 0;
+  const speciesBlocks = [];
+
+  SPECIES.forEach(sp => {
+    const monthData = sp.tasks[NOW_M] || sp.tasks[String(NOW_M)];
+    if (!monthData || Object.keys(monthData).length === 0) return;
+
+    const taskRows = [];
+    Object.entries(monthData).forEach(([phase, phData]) => {
+      const tasks = Array.isArray(phData) ? phData : (phData[LANG] || phData.pt || []);
+      const p = ph(phase);
+      const phaseLabel = ui.phases[phase] || phase;
+      tasks.forEach(task => {
+        const key  = taskKey(sp.id, NOW_M, phase, task);
+        const done = isDone(key);
+        totalTasks++;
+        if (done) doneTasks++;
+        taskRows.push({ key, task, phase, phaseLabel, p, done });
+      });
+    });
+
+    if (taskRows.length > 0) speciesBlocks.push({ sp, taskRows });
+  });
+
+  const pct = totalTasks > 0 ? Math.round(doneTasks / totalTasks * 100) : 0;
+
+  let html = `
+    <div class="mv-header">
+      <div>
+        <h2 class="mv-title">${ui.monthViewSub} <em>${monthName}</em></h2>
+        <div class="mv-progress-label">${doneTasks} / ${totalTasks} ${ui.progress}</div>
+      </div>
+      <div class="mv-actions">
+        <button class="mv-action-btn" onclick="clearCompleted()">${ui.clearDone}</button>
+        <button class="mv-action-btn mv-reset" onclick="resetAll()">${ui.resetAll}</button>
+      </div>
+    </div>
+    <div class="mv-progress-bar"><div class="mv-progress-fill" style="width:${pct}%"></div></div>`;
+
+  if (speciesBlocks.length === 0) {
+    html += `<div class="mv-empty">${ui.noTasksMonth}</div>`;
+  } else {
+    html += `<div class="mv-grid">`;
+    speciesBlocks.forEach(({ sp, taskRows }) => {
+      const spDone  = taskRows.filter(r => r.done).length;
+      const spTotal = taskRows.length;
+      html += `
+        <div class="mv-card" id="mvc-${sp.id}">
+          <div class="mv-card-head">
+            <span class="mv-card-icon">${sp.icon}</span>
+            <span class="mv-card-name">${t(sp.name)}</span>
+            <span class="mv-card-count">${spDone}/${spTotal}</span>
+          </div>
+          <div class="mv-card-body">`;
+      taskRows.forEach(({ key, task, phase, phaseLabel, p, done }) => {
+        html += `
+            <label class="mv-task${done ? " mv-task-done" : ""}" data-key="${key}">
+              <input type="checkbox" class="mv-check" data-key="${key}"${done ? " checked" : ""}>
+              <span class="mv-task-dot" style="background:${p.bar}"></span>
+              <span class="mv-task-text">${task}</span>
+            </label>`;
+      });
+      html += `</div></div>`;
+    });
+    html += `</div>`;
+  }
+
+  section.innerHTML = html;
+
+  // Wire up checkboxes
+  section.querySelectorAll(".mv-check").forEach(cb => {
+    cb.addEventListener("change", () => {
+      setDone(cb.dataset.key, cb.checked);
+      renderMonthView(); // re-render to update progress
+      document.getElementById("navMonthBtn").classList.add("active");
+      document.getElementById("monthViewSection").classList.add("active");
+    });
+  });
+}
+
+function clearCompleted() {
+  SPECIES.forEach(sp => {
+    const monthData = sp.tasks[NOW_M] || sp.tasks[String(NOW_M)];
+    if (!monthData) return;
+    Object.entries(monthData).forEach(([phase, phData]) => {
+      const tasks = Array.isArray(phData) ? phData : (phData[LANG] || phData.pt || []);
+      tasks.forEach(task => setDone(taskKey(sp.id, NOW_M, phase, task), false));
+    });
+  });
+  renderMonthView();
+  document.getElementById("navMonthBtn").classList.add("active");
+  document.getElementById("monthViewSection").classList.add("active");
+}
+
+function resetAll() {
+  try {
+    Object.keys(localStorage)
+      .filter(k => k.startsWith(STORAGE_KEY))
+      .forEach(k => localStorage.removeItem(k));
+  } catch {}
+  renderMonthView();
+  document.getElementById("navMonthBtn").classList.add("active");
+  document.getElementById("monthViewSection").classList.add("active");
 }
 
 /* ── TIMELINE ─────────────────────────────────────── */
@@ -255,19 +584,31 @@ function rebuild() {
   const activeM  = parseInt(
     document.querySelector(`#sp-${activeId} .m-btn.active`)?.dataset.m ?? NOW_M
   );
+  const monthViewWasActive = document.getElementById("monthViewSection")?.classList.contains("active");
 
   document.getElementById("pageWrap").innerHTML = "";
+
+  // Re-create month view section
+  const mvSection = document.createElement("div");
+  mvSection.id = "monthViewSection";
+  mvSection.className = "month-view-section";
+  document.getElementById("pageWrap").appendChild(mvSection);
+
   buildNav();
   SPECIES.forEach((sp, i) => buildSection(sp, i === 0));
+  buildRequestSection();
   updateMasthead();
 
-  if (activeId) activateSpecies(activeId);
-
-  const mBtn = document.querySelector(`#sp-${activeId} .m-btn[data-m="${activeM}"]`);
-  if (mBtn) {
-    document.querySelectorAll(`#sp-${activeId} .m-btn`).forEach(b => b.classList.remove("active"));
-    mBtn.classList.add("active");
-    renderTasks(SPECIES.find(s => s.id === activeId), activeM);
+  if (monthViewWasActive) {
+    activateMonthView();
+  } else if (activeId && activeId !== "__month__") {
+    activateSpecies(activeId);
+    const mBtn = document.querySelector(`#sp-${activeId} .m-btn[data-m="${activeM}"]`);
+    if (mBtn) {
+      document.querySelectorAll(`#sp-${activeId} .m-btn`).forEach(b => b.classList.remove("active"));
+      mBtn.classList.add("active");
+      renderTasks(SPECIES.find(s => s.id === activeId), activeM);
+    }
   }
 }
 
@@ -283,16 +624,12 @@ function setLang(lang) {
 
 /* ── INIT ─────────────────────────────────────────── */
 async function init() {
-  // Set PT as default immediately
   document.getElementById("btnPT").classList.add("active");
   document.getElementById("btnEN").classList.remove("active");
   updateMasthead();
   renderMoonWidget("pt");
-
-  // Load weather in background
   initWeather("pt");
 
-  // Load species data
   try {
     const loadingMsg = document.getElementById("loadingMsg");
     if (loadingMsg) loadingMsg.textContent = u().loading;
@@ -303,8 +640,16 @@ async function init() {
     document.getElementById("loadingState")?.remove();
     document.getElementById("snavLoading")?.remove();
 
+    // Create month view section in page
+    const mvSection = document.createElement("div");
+    mvSection.id = "monthViewSection";
+    mvSection.className = "month-view-section";
+    document.getElementById("pageWrap").appendChild(mvSection);
+
     buildNav();
     SPECIES.forEach((sp, i) => buildSection(sp, i === 0));
+    buildRequestSection();
+
   } catch (err) {
     console.error("Failed to load species data:", err);
     const ui = u();
